@@ -24,7 +24,6 @@ doc/
 .DS_Store
 .idea
 .secret
-/.c9/*
 
 # Ignore Spring files.
 /spring/*.pid
