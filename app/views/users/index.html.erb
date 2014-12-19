@@ -1,0 +1,15 @@
+<div class='row'>
+  <div class='container span8'>
+    <h4>All Users</h4>
+    <% @user.each do |user| %>  
+      <div class='well'>
+        <div class='control-group'>
+          <h4>Name: <%= user.username %></h4>
+        </div>
+        <div class='control-group'>
+          The time is <%= Time.zone.now %>
+        </div>
+      </div>
+    <% end %>  
+  </div>
+</div>

@@ -7,8 +7,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="container">  
+  <header class="navbar navbar-fixed-top navbar-default">
+    <div class="container">
+      <%= link_to "Login System", users_path, class: "btn btn-lg btn-success", id: "logo" %>
+      <nav>
+        <ul class="nav nav-pills headerDetail">	
+          <li role="presentation"><%= link_to "All Users", users_path %></li>
+          <li role="presentation"><%= link_to "About", '' %></li>
+          <li role="presentation"><%= link_to "Help", '' %></li>
+        </ul>
+      </nav>  
+    </div>
+  </header>
 
 <%= yield %>
-
+</div>
 </body>
 </html>
