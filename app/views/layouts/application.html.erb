@@ -14,14 +14,26 @@
       <nav>
         <ul class="nav nav-pills headerDetail">	
           <li role="presentation"><%= link_to "All Users", users_path %></li>
-          <li role="presentation"><%= link_to "About", '' %></li>
-          <li role="presentation"><%= link_to "Help", '' %></li>
+          <% if logged_in? %>
+            <li role="presentation"><%= link_to "Logout", logout_path %></li>
+          <% else %>
+            <li role="presentation"><%= link_to "Log in", login_path %></li>
+          <% end %>
         </ul>
       </nav>  
     </div>
   </header>
+  <% flash.each do |name, msg| %>
+    <% if msg.is_a?(String) %>
+      <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
+        <a class="close" data-dismiss="alert">&#215;</a>
+        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+      </div>
+    <% end %>
+  <% end %>
 
-<%= yield %>
+  <%= yield %>
+
 </div>
 </body>
 </html>
